@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>个人简介</title>
+	<link rel="stylesheet" type="text/css" href="css/home _page.css" />
+	<style>
+		body {
+			background: url(img/grjj/grjj2.png) top left;
+			background-size: 100%;
+		}
+
+		img {
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="body">
+		<div class="head">
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a class="fff" href="grjj.html">个人简介</a></li>
+					<li><a href="grzp.html">个人作品</a></li>
+					<li><a href="lxw.html">联系我</a></li>
+					<li><a href="ss.html">说说</a></li>
+					<li><a href="denglu.html">登录</a></li>
+					<li><a href="zhuce.html">注册</a></li>
+					
+				</ul>
+			</div>
+			<div class="logo">
+				<a href="index.html"><img src="img/shou/my.jpg" height="100%"></a>
+			</div>
+		</div>
+		<div class="grjj">
+			<!--<div class="centre">
+						<img src="img/grjj/grjj1.jpg" width="100%" height="400px">
+					</div>-->
+			<table class="grjj-waibianju" width="1200" border="1" align="center" cellpadding="0" cellspacing="0"
+				id="tab">
+				<tr>
+					<td class="juzhong" width="10%">个人头像</td>
+					<td style="text-align: center;" width="10%">
+						<img src="img/grjj/tx1.jpg" width="300">
+					</td>
+					<td colspan="2">
+						<p style="line-height: 40px;padding: 10px 20px;">姓名:玖辞</p>
+						<p style="line-height: 40px;padding: 10px 20px;">专业:计算机应用技术</p>
+						<p style="line-height: 40px;padding: 10px 20px;">学号:2022105070666</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="juzhong">自我评价</td>
+					<td colspan="3">
+						&nbsp;&nbsp;&nbsp;&nbsp;三年的大学生活是我人生的关键点。
+						在着三年的大学期间，我始终以提高自身的综合素质为目标，以自己的全面发展为努力方向，树立正确的人生观、价值观和世界观。为适应社会发展的需求，我认真学习各种专业知识，发挥自己的特长;挖掘自身的潜力，结合每年的暑期社会实践机会，从而逐步提高了自己的学习能力和分析处理问题的能力以及一定的协调组织和管理能力。
+						思想行为方面能够作风优良、待人诚恳，能较好处理人际关际，处事冷静稳健，能合理地统筹安排生活中的事务。为社会为学校为同学为身边的人做事不再是觉得是一种累赘，而是很乐意的去做并目能够得到满足和快乐，不会去想做好自己的事情，别人的事情少管。并目一直在追求人格的升华，注重自己的品行。我崇拜有巨大人格魅力的人，并一直希望自己也能做到。在大学生活中，我坚持着自我反省且努力的完善自己的人格。现在我理解道理，乐于助人不仅能铸造高尚的品德，而且自身也会得到很多利益，帮助别人的同时也是在帮助自己。回顾这几年，我很高兴能在同学有困难的时候曾经帮助过他们，同样的，在我有困难时我的同学们也无私的伸出了援助之手。对于老师，我一向是十分敬重的，因为他们在我彷徨的时候指导帮助我。如果没有老师的帮助，我可能将不知道何去何从。我现在领悟到，与其说品德是个人的人品操行，不如说是个人对整个社会的责任。一个人活在这个世界上，就得对社会负起一定的责任义务，有了高尚的品德，就能正确认识自己所负的责任，在贡献中实现自身的价值。
+					</td>
+				</tr>
+			</table>
+			<div class="endgrjj">
+				<p>Copyright &copy; 2023 JiuCi.com All rights reserved.</p>
+				<p>版权所有 &copy; 2023景德镇艺术职业大学 | 粤ICP备100861234号</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	//跳转页面到登录页面
+	window.onload = function () {
+		setTimeout(function () {
+			if (localStorage.getItem("loginSuccess") !== "true") {
+				window.location.href = "denglu.html";
+			}
+		}, 1000);
+	};
+
+</script>
+
+</html>

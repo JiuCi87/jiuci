@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="css/home _page.css" />
+</head>
+
+<body>
+	<div class="body">
+		<div class="head">
+			<div class="nav">
+				<ul>
+					<li><a class="fff" href="#">首页</a></li>
+					<li><a href="grjj.html">个人简介</a></li>
+					<li><a href="grzp.html">个人作品</a></li>
+					<li><a href="lxw.html">联系我</a></li>
+					<li><a href="ss.html">说说</a></li>
+					<li><a href="denglu.html">登录</a></li>
+					<li><a href="zhuce.html">注册</a></li>
+					
+				</ul>
+			</div>
+			<div class="logo">
+				<a href="index.html"><img src="img/shou/my.jpg" height="100%"></a>
+			</div>
+		</div>
+		<div class="centre">
+			<div class="imgs">
+				<div class="imgs-sim" style="display: block;">
+					<img src="img/centre/cen1.png" alt="Image 1">
+				</div>
+				<div class="imgs-sim" style="display: none;">
+					<img src="img/centre/cen2.png" alt="Image 2">
+				</div>
+				<div class="imgs-sim" style="display: none;">
+					<img src="img/centre/cen3.png" alt="Image 3">
+				</div>
+				<div class="imgs-sim" style="display: none;">
+					<img src="img/centre/cen4.png" alt="Image 3">
+				</div>
+			</div>
+			<div class="left" id="prev-btn">&lt;</div>
+			<div class="right" id="next-btn">&gt;</div>
+			<div class="modal">
+				<div class="title">示例图片</div>
+				<div class="dots">
+					<ul>
+						<li><a href="#1"></a></li>
+						<li><a href="#2"></a></li>
+						<li><a href="#3"></a></li>
+						<li><a href="#4"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="centre_1">
+			<ul>
+				<li><a href="grzp.html#fengjing"><img src="img/zhu/zhu1.jpg" width="240" height="200" alt="田园小屋"
+							title="田园小屋" /></a></li>
+				<li><a href="grzp.html#fengjing"><img src="img/zhu/zhu3.jpg" width="240" height="200" alt="高山河流"
+							title="高山河流" /></a></li>
+				<li><a href="grzp.html#xingkong"><img src="img/zhu/zhu5.jpg" width="240" height="200" alt="星空"
+							title="星空" /></a></li>
+				<li><a href="grzp.html#dongwu"><img src="img/zhu/zhu4.jpg" width="240" height="200" alt="熊猫"
+							title="熊猫" /></a></li>
+			</ul>
+
+		</div>
+		<div class="clear"></div>
+		<div class="foot">
+			<p>个人寄语</p>
+			<br />
+			<br />
+			<p class="foot_zi">&nbsp;&nbsp;&nbsp;&nbsp;校园中，我们曾经共担风雨，我们曾经共享阳光，我们曾经挥泪拼搏，我们曾经笑迎辉煌。毕业了，天空任我们展翅飞翔，海洋任我们扬帆启航，
+				高山等着我们奋勇攀登，平原期待我们信马由缰......亲爱的同学，出发吧，前程无量!</p>
+		</div>
+		<div class="end">
+			<p>Copyright &copy; 2023 JiuCi.com All rights reserved.</p>
+			<p>版权所有 &copy; 2023景德镇艺术职业大学 | 粤ICP备100861234号</p>
+		</div>
+	</div>
+
+</body>
+<script>
+	<!--轮番图-->
+	var index = 0;
+	var small_img = document.getElementsByClassName('imgs-sim');
+	var prev_btn = document.getElementById('prev-btn');
+	var next_btn = document.getElementById('next-btn');
+	var dots = document.querySelectorAll('.dots li');
+
+    // 为每个li标签添加点击事件监听器
+    dots.forEach(function(dot, i) {
+         dot.addEventListener('click', function() {
+         index = i;
+         updateDisplay();
+        });
+    });
+	
+	// 设置初始显示为第一张图片
+	small_img[index].style.display = 'block';
+
+	// 点击左按钮
+	prev_btn.addEventListener('click', function () {
+		index--;
+		if (index < 0) {
+			index = small_img.length - 1;
+		}
+		updateDisplay();
+	});
+
+	// 点击右按钮
+	next_btn.addEventListener('click', function () {
+		index++;
+		if (index >= small_img.length) {
+			index = 0;
+		}
+		updateDisplay();
+	});
+
+	// 更新图片显示
+	function updateDisplay() {
+		for (const n of small_img) {
+			n.style.display = 'none';
+		}
+		small_img[index].style.display = 'block';
+	}
+
+	// 定时切换图片
+	setInterval(function () {
+		index++;
+		if (index >= small_img.length) {
+			index = 0;
+		}
+		updateDisplay();
+	}, 3000);
+
+</script>
+
+</html>

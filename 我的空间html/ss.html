@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>说说</title>
+  <link rel="stylesheet" type="text/css" href="css/home _page.css" />
+  <style>
+    body {
+      background: url(img/dengruzhuce/de2.jpg) top left;
+      background-size: 100%;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div class="head">
+      <div class="nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="grjj.html">个人简介</a></li>
+          <li><a href="grzp.html">个人作品</a></li>
+          <li><a href="lxw.html">联系我</a></li>
+          <li><a class="fff" href="ss.html">说说</a></li>
+          <li><a href="denglu.html">登录</a></li>
+          <li><a href="zhuce.html">注册</a></li>
+
+        </ul>
+      </div>
+      <div class="logo">
+        <a href="index.html"><img src="img/shou/my.jpg" height="100%" onclick="openModal(this)"></a>
+      </div>
+    </div>
+    <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" class="ss">
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <table width="800" border="0" cellspacing="10" cellpadding="0">
+            <tr>
+              <td>
+                <div class="title1">
+                  <p>致一些被遗失了的自己。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <p>　　其实，我喜欢上学，只是不喜欢上课，怀念那些曾经一起闹，一起笑的时光。<br />
+                  <br />
+                  <img width="510" src="img/grzp/01.png" onclick="openModal(this)" /><br />
+                  <br />
+                  &#160;好朋友不需要太多，两个就够了，一个肯把钱借给你，当他向你要债时，另一个肯把他打死。<br />
+                  <br />
+                  <img width="510" height="353" src="img/grzp/02.png" onclick="openModal(this)" />&#160;<br />
+                  <br />
+                  &#160;生活坏到一定程度就会好起来，因为他无法更坏。努力过后，才知道许多事情，坚持坚持，就过来了&#8212;&#8212;<br />
+                  <br />
+                  &#160;<img width="510" height="350" src="img/grzp/03.png" onclick="openModal(this)" /><br />
+                  <br />
+                <p><br />
+                  &#160;别在喜悦时承诺，别在悲伤时回答，别在愤怒时决定。<br />
+                  &#160; </p>
+                <p><img width="500" height="375" src="img/grzp/05.png" onclick="openModal(this)" /><br />
+                  <br />
+                <p><br />
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div class="left" id="prevButton">&lt;</div>
+    <div class="right" id="nextButton">&gt;</div>
+  </div>
+</body>
+<script>
+  // <!--放大图片-->
+  function openModal(img) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImg");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+  //跳转页面到登录页面
+  window.onload = function () {
+    setTimeout(function () {
+      if (localStorage.getItem("loginSuccess") !== "true") {
+        window.location.href = "denglu.html";
+      }
+    }, 1000);
+  };
+</script>
+
+</html>
